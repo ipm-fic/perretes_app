@@ -7,7 +7,7 @@ import 'package:perretes_app/clients/dogceo_client.dart';
 class FotoRandom extends StatefulWidget {
   final String breed;
   
-  FotoRandom({this.breed});
+  FotoRandom({this.breed}) : super(key: ValueKey(breed));
 
   @override
   _FotoRandomState createState() => _FotoRandomState();
