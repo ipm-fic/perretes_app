@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'dart:io';
 
 class DogCEOClient {
+  const DogCEOClient();
+  
   Future<String> loadBreedImageURL(String breed) async {
     String url = "http://dog.ceo/api/breed/${breed}/images/random";
     HttpClient httpClient = HttpClient();

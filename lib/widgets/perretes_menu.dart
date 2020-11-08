@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String title = "Perretes App";
+import 'package:perretes_app/config/app_config.dart';
 
 
 class PerretesMenu extends StatelessWidget {
@@ -21,7 +21,7 @@ class PerretesMenu extends StatelessWidget {
           //      P.e.: subir una foto
           AboutListTile(
             icon: Icon(Icons.info),
-            applicationName: title,
+            applicationName: AppConfig.of(context).title,
             aboutBoxChildren: <Widget>[
               Text('The greatest Perretes around the world'),
             ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:perretes_app/config/app_config.dart';
 import 'package:perretes_app/widgets/foto_random.dart';
 import 'package:perretes_app/widgets/perretes_menu.dart';
 import 'package:perretes_app/widgets/razas_list.dart';
 
-String title = "Perretes App";
 
 class MasterAndDetailScreen extends StatelessWidget {
   final ValueNotifier<String> _breed = ValueNotifier<String>(null);
@@ -13,7 +13,7 @@ class MasterAndDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(AppConfig.of(context).title),
       ),
       drawer: PerretesMenu(),
       body: Row(
