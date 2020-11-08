@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:perretes_app/widgets/perretes_menu.dart';
+import 'package:perretes_app/widgets/razas_list.dart';
 
 String title = "Perretes App";
 
@@ -12,7 +13,7 @@ class ListaRazasScreen extends StatelessWidget {
         title: Text('$title'),
       ),
       drawer: PerretesMenu(),
-      body: Text("Cooming soon..."),
+      body: RazasList(),
     );
   }
 }

@@ -45,6 +45,7 @@ flutter:
   uses-material-design: true
 
   assets:
+     - data/breeds_list.json
      - images/avatar-snoopy.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
