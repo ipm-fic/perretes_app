@@ -47,6 +47,7 @@ flutter:
   assets:
      - data/breeds_list.json
      - images/avatar-snoopy.jpeg
+     - images/snoopy-penalty-box.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
