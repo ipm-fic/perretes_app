@@ -16,6 +16,7 @@ class RazasList extends StatefulWidget {
 
 class _RazasListState extends State<RazasList> {
   Future<List<String>> _breeds;
+  String _selection = null;
 
   @override
   void initState() {
@@ -37,8 +38,11 @@ class _RazasListState extends State<RazasList> {
             itemBuilder: (BuildContext context, int i) =>
             ListTile(
               title: Text(data[i], style: fontStyle),
-              selected: false,
-              onTap: () { widget.onBreedSelected(data[i]); },
+              selected: _selection == data[i],
+              onTap: () {
+                setState(() {_selection = data[i]; });
+                widget.onBreedSelected(data[i]);
+              },
             ),
           );
         }
