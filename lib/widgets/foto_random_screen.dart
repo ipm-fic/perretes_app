@@ -4,9 +4,11 @@ import 'package:perretes_app/widgets/foto_random.dart';
 
 
 String title = "Perretes App";
-String breed = "sheepdog";
 
 class FotoRandomScreen extends StatelessWidget {
+  final String breed;
+  FotoRandomScreen({this.breed}) : super();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

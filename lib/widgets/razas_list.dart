@@ -2,6 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:perretes_app/widgets/foto_random_screen.dart';
+
+
 class RazasList extends StatefulWidget {
   @override
   _RazasListState createState() => _RazasListState();
@@ -31,6 +34,15 @@ class _RazasListState extends State<RazasList> {
             ListTile(
               title: Text(data[i], style: fontStyle),
               selected: false,
+              onTap: () async {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return FotoRandomScreen(breed: data[i]);
+                    },
+                  ),
+                );
+              },
             ),
           );
         }
