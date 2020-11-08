@@ -6,6 +6,10 @@ import 'package:perretes_app/widgets/foto_random_screen.dart';
 
 
 class RazasList extends StatefulWidget {
+  final void Function(String breed) onBreedSelected;
+
+  RazasList({this.onBreedSelected}) : super();
+  
   @override
   _RazasListState createState() => _RazasListState();
 }
@@ -34,15 +38,7 @@ class _RazasListState extends State<RazasList> {
             ListTile(
               title: Text(data[i], style: fontStyle),
               selected: false,
-              onTap: () async {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return FotoRandomScreen(breed: data[i]);
-                    },
-                  ),
-                );
-              },
+              onTap: () { widget.onBreedSelected(data[i]); },
             ),
           );
         }
