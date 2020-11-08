@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:perretes_app/config/app_config.dart';
 import 'package:perretes_app/clients/dogceo_client.dart';
+
 
 class FotoRandom extends StatefulWidget {
   final String breed;
@@ -14,12 +16,13 @@ class FotoRandom extends StatefulWidget {
 }
 
 class _FotoRandomState extends State<FotoRandom> {
-  final DogCEOClient client = DogCEOClient();
   Future<String> _randomUrl;
 
+  // didChangeDependencies ocurre después de initState
+  // en initState no podemos usar el context para acceder a los widget heredados
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _reload();
   }
 
@@ -63,6 +66,7 @@ class _FotoRandomState extends State<FotoRandom> {
 
   
   void _reload() {
+    DogCEOClient client = AppConfig.of(context).client;
     setState(() { _randomUrl = client.loadBreedImageURL(widget.breed); });
   }
 }
